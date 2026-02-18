@@ -3,9 +3,11 @@ import { createServerClient } from "@supabase/ssr";
 
 import { env } from "@/lib/env";
 
+type CookieStore = Awaited<ReturnType<typeof cookies>>;
+
 // Server Components: read cookies, don't attempt to set.
 export async function createSupabaseServerClient() {
-  const cookieStore = await cookies() as Awaited<ReturnType<typeof cookies>>;
+  const cookieStore: CookieStore = await cookies();
 
   return createServerClient(env.supabaseUrl(), env.supabasePublishableKey(), {
     cookies: {
@@ -20,7 +22,7 @@ export async function createSupabaseServerClient() {
 
 // Route Handlers / Server Actions: read + set cookies.
 export async function createSupabaseRouteHandlerClient() {
-  const cookieStore = await cookies() as Awaited<ReturnType<typeof cookies>>;
+  const cookieStore: CookieStore = await cookies();
 
   return createServerClient(env.supabaseUrl(), env.supabasePublishableKey(), {
     cookies: {
