@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   const next = requestUrl.searchParams.get("next") ?? "/";
 
   if (code) {
-    const supabase = createSupabaseRouteHandlerClient();
+    const supabase = await createSupabaseRouteHandlerClient();
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (error) {
       return NextResponse.redirect(
