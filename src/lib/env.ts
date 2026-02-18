@@ -8,7 +8,7 @@ export function getRequiredEnv(name: string): string {
 
 export const env = {
   supabaseUrl: () => getRequiredEnv("NEXT_PUBLIC_SUPABASE_URL"),
-  supabasePublishableKey: () =>
-    getRequiredEnv("NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY"),
+  supabaseAnonKey: () =>
+    getRequiredEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY"),
 };
 

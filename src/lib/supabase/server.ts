@@ -7,7 +7,7 @@ import { env } from "@/lib/env";
 export async function createSupabaseServerClient() {
   const cookieStore = await cookies() as any;
 
-  return createServerClient(env.supabaseUrl(), env.supabasePublishableKey(), {
+  return createServerClient(env.supabaseUrl(), env.supabaseAnonKey(), {
     cookies: {
       getAll() {
         return cookieStore.getAll ? cookieStore.getAll() : []
@@ -21,7 +21,7 @@ export async function createSupabaseServerClient() {
 export async function createSupabaseRouteHandlerClient() {
   const cookieStore = await cookies() as any;
 
-  return createServerClient(env.supabaseUrl(), env.supabasePublishableKey(), {
+  return createServerClient(env.supabaseUrl(), env.supabaseAnonKey(), {
     cookies: {
       getAll() {
         return cookieStore.getAll ? cookieStore.getAll() : []
