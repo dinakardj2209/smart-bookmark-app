@@ -10,7 +10,7 @@ export async function createSupabaseServerClient() {
   return createServerClient(env.supabaseUrl(), env.supabasePublishableKey(), {
     cookies: {
       getAll() {
-        return cookieStore.getAll();
+        return cookieStore.getAll ? cookieStore.getAll() : []
       },
       setAll() {},
     },
@@ -24,7 +24,7 @@ export async function createSupabaseRouteHandlerClient() {
   return createServerClient(env.supabaseUrl(), env.supabasePublishableKey(), {
     cookies: {
       getAll() {
-        return cookieStore.getAll();
+        return cookieStore.getAll ? cookieStore.getAll() : []
       },
       setAll(cookiesToSet: { name: string; value: string; options?: Record<string, unknown> }[]) {
         for (const { name, value, options } of cookiesToSet) {
