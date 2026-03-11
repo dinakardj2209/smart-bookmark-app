@@ -64,7 +64,7 @@ async function HomePage() {
          <h2> <p className="mt-1 text-sm font-semibold text-white-900">Smart Bookmark App</p>
           <p className="mt-1 text-sm text-zinc-600">
             Signed in as{" "}
-            <span className="font-medium text-white-900">
+            <span className="mt-1 text-sm font-semibold text-white-900">
               {user.user_metadata?.name ?? user.email ?? "User"}
             </span>
           </p></h2>
