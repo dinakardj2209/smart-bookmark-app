@@ -61,10 +61,10 @@ async function HomePage() {
     <div className="mx-auto min-h-screen max-w-5xl px-6 py-10">
       <header className="flex items-center justify-between">
         <div>
-         <h2> <p className="text-sm font-medium text-zinc-900">Smart Bookmark App</p>
+         <h2> <p className="mt-1 text-sm font-semibold text-white-900">Smart Bookmark App</p>
           <p className="mt-1 text-sm text-zinc-600">
             Signed in as{" "}
-            <span className="font-medium text-zinc-900">
+            <span className="font-medium text-white-900">
               {user.user_metadata?.name ?? user.email ?? "User"}
             </span>
           </p></h2>
