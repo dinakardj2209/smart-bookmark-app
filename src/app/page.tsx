@@ -43,9 +43,6 @@ async function HomePage() {
               <div className="mt-5">
                 <SignInWithGoogleButton />
               </div>
-              <p className="mt-4 text-xs leading-5 text-zinc-500">
-                No email/password — Google OAuth only.
-              </p>
             </div>
           </div>
         </div>
@@ -64,13 +61,13 @@ async function HomePage() {
     <div className="mx-auto min-h-screen max-w-5xl px-6 py-10">
       <header className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-zinc-900">Smart Bookmark App</p>
+         <h2> <p className="text-sm font-medium text-zinc-900">Smart Bookmark App</p>
           <p className="mt-1 text-sm text-zinc-600">
             Signed in as{" "}
             <span className="font-medium text-zinc-900">
               {user.user_metadata?.name ?? user.email ?? "User"}
             </span>
-          </p>
+          </p></h2>
         </div>
         <SignOutButton />
       </header>

@@ -32,9 +32,9 @@ export function SignInWithGoogleButton() {
         type="button"
         onClick={signIn}
         disabled={isLoading}
-        className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex h-11 cursor-pointer items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 text-sm font-medium text-zinc-900 shadow-sm hover:bg-zinc-50 disabled:cursor-not-allowed disabled:opacity-60"
       >
-        <span className="text-base leading-none">G</span>
+        <span className="text-base leading-none"></span>
         {isLoading ? "Signing in…" : "Continue with Google"}
       </button>
       {error ? <p className="text-sm text-red-600">{error}</p> : null}
